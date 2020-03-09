@@ -26,8 +26,10 @@ class Criterion(object):
             self.__wbic = self.calc_wbic(self.__samples)
         return self.__wbic
     
-    def calc_waic(self, samples, beta=1):
+    def calc_waic(self, samples):
         """
+        Tn : 経験損失
+        Vn : 汎関数分散
         ==params==
         samples: 対数尤度　log p(X_i|w)
         beta : 逆温度
@@ -39,20 +41,21 @@ class Criterion(object):
         # print("Tn:",Tn)
         Vn = np.sum(np.mean(samples**2, axis=0) - np.mean(samples, axis=0)**2)
         # print("Vn",Vn)
-        waic = Tn + beta * (Vn/samples.shape[0])
+        waic = Tn +  (Vn/samples.shape[0])
         # print("waic", waic)
         return waic
 
     def calc_wbic(self, samples):
         """
+        WBIC : beta = 1/log n の時の事後分布で対数尤度を重み付けしたもの
         ==params==
         samples: 対数尤度　log p(X_i|w)
         beta : 逆温度
         ==return==
         wbic :
         """
-        beta = 1/np.log(samples.shape[0])
-        wbic = - np.mean(beta * np.sum(samples, axis=1))
+        
+        wbic = - np.mean(np.sum(samples, axis=1))
         # print("wbic",wbic)
         return wbic
 

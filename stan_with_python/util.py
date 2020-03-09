@@ -30,7 +30,8 @@ def read_stanmodel(stan_path, pickle_path):
 def plot_inference_data(inference_x : pd.DataFrame, 
                         inference_y : pd.DataFrame, 
                         interval_coef=1.96, save=False, out_dir=None, png_name=None):
-    
+    """これ正規分布モデルの時だけ。。。
+    """
     mean = np.mean(inference_y, axis=0)
     std = np.std(inference_y,  axis=0)
     # print(f"mean: {mean.shape} \n std: {std.shape}")

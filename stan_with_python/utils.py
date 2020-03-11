@@ -1,12 +1,15 @@
 import os
 import pickle
+import pystan
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import scipy.stats as ss
 
-import pystan
 
 from pathlib import Path
+
 from typing import Union, Optional
 
 
@@ -38,13 +41,12 @@ def plot_inference_data(inference_x : np.ndarray,
     mcmcサンプルがこの区間に入る確率が95%.モデルが十分真の分布に対して良いモデルとする。
     """
     mean  = np.mean(inference_y, axis=0)
-    quantile_5 = np.quantile(inference_y, 0.05, axis=0)
-    upper: np.ndarray = mean + quantile_5
-    lower: np.ndarray = mean - quantile_5
+    lower , upper = ss.mstats.mquantiles(inference_y, [0.0025, 0.975], axis=0)
     # drawing png
     plt.plot(inference_x, mean, label="mean")
     plt.fill_between(inference_x, upper, lower, alpha=0.4)
     plt.title("inference data and prediction")
+    plt.legend()
     # save png 
     if save:
         if out_dir is None:

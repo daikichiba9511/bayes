@@ -26,6 +26,7 @@ def plot_inference_interval(original_x,
     pred_x :　inference_meanの数
     """
     # draw
+    plt.style.use("ggplot")
     plt.plot(original_x, original_y, marker="o")
     lower80 , upper80 = ss.mstats.mquantiles(inference_mean, [0.1, 0.9], axis=0)
     lower50 , upper50 = ss.mstats.mquantiles(inference_mean, [0.25, 0.75], axis=0)
@@ -37,7 +38,7 @@ def plot_inference_interval(original_x,
     # save png 
     if save:
         if out_dir is None:
-            base_dir = Path.cwd()
+            base_dir = Path.cwd()                              
             Path.mkdir(base_dir / "save_stanpng")
             out_dir = base_dir / "save_stanpng"
         plt.savefig(out_dir / "inference_data_"+png_name)
@@ -53,7 +54,6 @@ def main():
         "Y":data["Y"],
         "T_pred":3
     }
-
     # stanmodel
     stan_path = base_dir /"model"/ "stanmodel" / "model12-3.stan"
     pkl_path = base_dir /"model"/ "model_pkl" / "model12-3.pkl"

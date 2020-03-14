@@ -55,3 +55,24 @@ def plot_inference_data(inference_x : np.ndarray,
         plt.savefig(Path(out_dir, "inference_data_"+png_name))
         plt.close()
     plt.show()
+
+def plot_inference_interval(original_x,
+                            original_y,
+                            inference_mean,
+                            pred_x):
+    """
+    orginal_x : 解析に使ったデータのX
+    original_y :　解析に使ったデータのY
+    inference_mean : stanで求めた平均
+    pred_x :　inference_meanの数
+    """
+    # draw
+    plt.plot(original_x, original_y, marker="o")
+    lower80 , upper80 = ss.mstats.mquantiles(inference_mean, [0.1, 0.9], axis=0)
+    lower50 , upper50 = ss.mstats.mquantiles(inference_mean, [0.25, 0.75], axis=0)
+    plt.plot(pred_x, np.mean(inference_mean, axis=0))
+    plt.fill_between(pred_x, lower80, upper80, alpha=0.3)
+    plt.fill_between(pred_x, lower50, upper50, alpha=0.4)
+    plt.xlabel("Time")
+    plt.ylabel("Y")
+    plt.show()

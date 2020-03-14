@@ -1,8 +1,17 @@
 # README
 
 - ベイズ推定よりな手法を勉強したことを雑多に上げていく
-- 間違い会ったら教えてください。
+- 間違いあったら教えてください。
 
+## stan_with_python
+- ２を参考にコードをpythonを使って書き直していく
+- 詳しくは[参考資料2](##参考資料)
+
+pystanのインストールなどは詳しくは[公式](https://pystan.readthedocs.io/en/latest/installation_beginner.html)
+
+c++のコンパイラのインストールと環境変数の設定を忘れずに。。
+
+`arviz`は事後分布などのプロットが簡単に行えるモジュール詳しくは[公式](https://arviz-devs.github.io/arviz/examples/index.html)
 
 ## 参考資料
 

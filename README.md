@@ -6,6 +6,7 @@
 ## stan_with_python
 - ２を参考にコードをpythonを使って書き直していく
 - 詳しくは[参考資料2](##参考資料)
+- 使用データは著者の[github](https://github.com/MatsuuraKentaro/RStanBook)
 
 pystanのインストールなどは詳しくは[公式](https://pystan.readthedocs.io/en/latest/installation_beginner.html)
 

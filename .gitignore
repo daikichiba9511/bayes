@@ -1,0 +1,10 @@
+
+.ipynb_checkpoints/
+
+.vscode/
+
+.DS_Store
+
+stan_with_python/__pycache__
+
+stan_with_python/model

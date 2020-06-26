@@ -29,6 +29,9 @@ Conda.ROOTENVで確認。自分の使いたい環境でなければ
 pythonまでのpathは、使いたい環境で`which python3`
 
 詳しくは　-> [もっと早く見つけたかった。。](https://qiita.com/ysaito8015@github/items/bee0846c227b10f3f369)
+
+juliaからPyCall経由でpystan使ってみたけど、遅すぎ？なのかうまく使えてないから、stan.jlをやるか、pythonでpystanを先にやる方がいい。
+
 ### version 
 
 - Julia 1.3

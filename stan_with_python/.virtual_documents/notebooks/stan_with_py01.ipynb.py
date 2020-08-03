@@ -47,7 +47,6 @@ schools = np.array(['Choate', 'Deerfield', 'Phillips Andover', 'Phillips Exeter'
                     'Hotchkiss', 'Lawrenceville', "St. Paul's", 'Mt. Hermon'])
 
 
-
 schools_model = """
 data {
   int<lower=0> J;

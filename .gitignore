@@ -8,3 +8,7 @@
 stan_with_python/__pycache__
 
 stan_with_python/model
+
+__pycache__
+
+.venv

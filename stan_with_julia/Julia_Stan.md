@@ -32,11 +32,16 @@ pythonまでのpathは、使いたい環境で`which python3`
 
 juliaからPyCall経由でpystan使ってみたけど、遅すぎ？なのかうまく使えてないから、stan.jlをやるか、pythonでpystanを先にやる方がいい。
 
-### version 
+#### 2020/08/03環境構築について更新
 
-- Julia 1.3
-- python 3.8.1
-- pystan  2.19.1.1 
+JuliaでStan.jlを使うための備忘録を書きました。詳細は以下リンク先を参照ください。
+
+* [Julia で Stan ~ 環境構築編 ~](https://blog.hatena.ne.jp/daiki_tech/daiki-tech.hatenablog.com/edit?entry=26006613609655045)
+
+### version
+
+- Julia 1.5
+
 
 ## 参考資料
 

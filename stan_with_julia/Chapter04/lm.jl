@@ -31,10 +31,18 @@ function plot_fig4_3()
     df_new = DataFrame(X=X_new)
     # @show df_new
 
+<<<<<<< HEAD
     # 95%prediction interval
     conf_95 = predict(res_lm, df_new, interval=:confidence, level=0.95)
     pred_95 = predict(res_lm, df_new, interval=:prediction, level=0.95)
 
+=======
+
+    # 95%prediction interval
+    conf_95 = predict(res_lm, df_new, interval=:confidence, level=0.95)
+    pred_95 = predict(res_lm, df_new, interval=:prediction, level=0.95)
+    
+>>>>>>> 7179ef551715948c70cc5565ff135b5431b941ad
     # 50％prediction interval
     conf_50 = predict(res_lm, df_new, interval=:confidence, level=0.50)
     pred_50 = predict(res_lm, df_new, interval=:prediction, level=0.50)
@@ -77,3 +85,7 @@ end
 
 # lm_predict()
 plot_fig4_3()
+<<<<<<< HEAD
+=======
+close(fig)
+>>>>>>> 7179ef551715948c70cc5565ff135b5431b941ad
